@@ -3,627 +3,356 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MaterialBank | One Sticky Note at a Time</title>
-  <meta
-    name="description"
-    content="MaterialBank is a Toronto youth non-profit organization supporting academic success for marginalized youth through school supplies, stationery, and other non-essential essentials."
-  />
+  <title>MaterialBank | Home</title>
+  <meta name="description" content="MaterialBank is a Toronto youth non-profit organization supporting academic success for marginalized youth through donating school supplies and other non-essential essentials." />
   <style>
-    :root {
-      --navy: #243b63;
-      --yellow: #f3dd62;
-      --cream: #fffdf6;
-      --text: #1f2937;
-      --muted: #5f6b7a;
-      --light-blue: #eaf4fb;
-      --card: #ffffff;
-      --border: rgba(36, 59, 99, 0.12);
-      --shadow: 0 12px 30px rgba(36, 59, 99, 0.10);
-      --radius: 22px;
-      --max-width: 1180px;
+    :root{
+      --navy:#243b63;
+      --yellow:#f3dd62;
+      --light:#f7fbff;
+      --text:#243043;
+      --muted:#5d6a7c;
+      --white:#ffffff;
+      --border:rgba(36,59,99,0.12);
+      --shadow:0 12px 28px rgba(36,59,99,0.10);
+      --radius:22px;
+      --max:1180px;
     }
 
-    * {
-      box-sizing: border-box;
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit;}
+    img{max-width:100%;display:block;}
+    .container{width:min(var(--max),92%);margin:0 auto;}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,0.94);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      padding:10px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      color:var(--navy);
+      font-weight:700;
+    }
+    .brand img{
+      width:54px;
+      height:54px;
+      border-radius:14px;
+      object-fit:cover;
+    }
+    .brand-text small{
+      display:block;
+      font-size:0.72rem;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+      color:var(--muted);
+    }
+    .brand-text span{
+      font-size:1.15rem;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:18px;
+      font-weight:700;
+      color:var(--navy);
+    }
+    .nav-links a:hover{opacity:0.75;}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 22px;
+      border-radius:999px;
+      font-weight:700;
+      transition:0.2s ease;
+    }
+    .btn-primary{
+      background:var(--navy);
+      color:#fff;
+      box-shadow:var(--shadow);
+    }
+    .btn-primary:hover{transform:translateY(-1px);}
+    .btn-light{
+      background:#fff;
+      color:var(--navy);
+      border:1px solid rgba(255,255,255,0.4);
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: #ffffff;
-      line-height: 1.6;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: min(var(--max-width), 92%);
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      min-height: 78px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-weight: 700;
-      color: var(--navy);
-    }
-
-    .brand img {
-      width: 54px;
-      height: 54px;
-      border-radius: 12px;
-      object-fit: cover;
-      box-shadow: var(--shadow);
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-
-    .brand-text small {
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .brand-text span {
-      font-size: 1.15rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      flex-wrap: wrap;
-      font-size: 0.96rem;
-      color: var(--navy);
-      font-weight: 600;
-    }
-
-    .nav-links a:hover {
-      opacity: 0.75;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 22px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: 0.2s ease;
-      border: 2px solid transparent;
-    }
-
-    .btn-primary {
-      background: var(--navy);
-      color: #fff;
-      box-shadow: var(--shadow);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      opacity: 0.95;
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--navy);
-      border-color: rgba(36, 59, 99, 0.22);
-    }
-
-    .btn-secondary:hover {
-      background: #f8fafc;
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 64px 0 42px;
+    .hero{
+      position:relative;
+      min-height:78vh;
+      display:flex;
+      align-items:center;
       background:
-        linear-gradient(180deg, rgba(243,221,98,0.18), rgba(255,255,255,0) 40%),
-        linear-gradient(135deg, #fffef7 0%, #f6fbff 100%);
+        linear-gradient(rgba(20,35,58,0.58), rgba(20,35,58,0.58)),
+        url("https://static.wixstatic.com/media/0c18e850e6e449c5a81de48680742097.jpg/v1/fill/w_980%2Ch_653%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/0c18e850e6e449c5a81de48680742097.jpg")
+        center/cover no-repeat;
+      color:#fff;
+    }
+    .hero-inner{
+      padding:90px 0;
+      max-width:760px;
+    }
+    .eyebrow{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(243,221,98,0.18);
+      border:1px solid rgba(255,255,255,0.18);
+      color:#fff;
+      font-size:0.82rem;
+      font-weight:700;
+      letter-spacing:0.04em;
+      margin-bottom:18px;
+    }
+    .hero h1{
+      margin:0 0 14px;
+      font-size:clamp(2.5rem,6vw,4.8rem);
+      line-height:1.02;
+    }
+    .hero p{
+      margin:0 0 26px;
+      font-size:1.08rem;
+      max-width:640px;
+      color:rgba(255,255,255,0.92);
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 36px;
-      align-items: center;
+    section{padding:76px 0;}
+    .section-heading{
+      text-align:center;
+      max-width:760px;
+      margin:0 auto 40px;
+    }
+    .tag{
+      display:inline-block;
+      color:var(--navy);
+      text-transform:uppercase;
+      font-size:0.8rem;
+      font-weight:800;
+      letter-spacing:0.08em;
+      margin-bottom:10px;
+    }
+    h2{
+      margin:0 0 10px;
+      color:var(--navy);
+      font-size:clamp(2rem,4vw,3rem);
+      line-height:1.08;
+    }
+    .section-heading p{margin:0;color:var(--muted);}
+
+    .feature-banner{
+      display:grid;
+      grid-template-columns:0.95fr 1.05fr;
+      gap:28px;
+      align-items:stretch;
+    }
+    .feature-image, .feature-copy{
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      background:#fff;
+    }
+    .feature-image img{
+      width:100%;
+      height:100%;
+      min-height:320px;
+      object-fit:cover;
+    }
+    .feature-copy{
+      padding:34px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      background:linear-gradient(135deg, rgba(243,221,98,0.20), rgba(234,244,251,0.75));
+    }
+    .feature-copy .date{
+      color:var(--muted);
+      font-weight:700;
+      margin-bottom:10px;
+      font-size:0.92rem;
+    }
+    .feature-copy h3{
+      margin:0 0 12px;
+      color:var(--navy);
+      font-size:2rem;
+      line-height:1.12;
+    }
+    .feature-copy p{margin:0 0 18px;color:var(--muted);}
+
+    .mission-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      align-items:center;
+    }
+    .mission-copy h3{
+      margin:0 0 12px;
+      color:var(--navy);
+      font-size:2rem;
+    }
+    .mission-copy p{
+      margin:0;
+      color:var(--muted);
+      font-size:1.04rem;
+    }
+    .mission-image{
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid var(--border);
+    }
+    .mission-image img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
     }
 
-    .eyebrow {
-      display: inline-block;
-      background: rgba(243,221,98,0.35);
-      color: var(--navy);
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      margin-bottom: 18px;
+    .stats{
+      background:#fffdf6;
+    }
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .stat-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:28px 20px;
+      text-align:center;
+    }
+    .stat-number{
+      font-size:clamp(2rem,4vw,3rem);
+      line-height:1;
+      color:var(--navy);
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .stat-label{
+      color:var(--muted);
+      font-weight:700;
     }
 
-    .hero h1 {
-      margin: 0 0 16px;
-      font-size: clamp(2.4rem, 5vw, 4.5rem);
-      line-height: 1.02;
-      color: var(--navy);
+    .pillars-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+    .pillar-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .pillar-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+    .pillar-card .content{padding:22px;}
+    .pillar-card h3{
+      margin:0 0 10px;
+      color:var(--navy);
+      font-size:1.3rem;
+    }
+    .pillar-card p{margin:0;color:var(--muted);}
+
+    .footer{
+      background:#fafbfc;
+      border-top:1px solid var(--border);
+      padding:56px 0 30px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:28px;
+    }
+    .footer-brand{
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
+    .footer-brand img{
+      width:70px;
+      height:70px;
+      border-radius:16px;
+      object-fit:cover;
+    }
+    .footer h4{
+      margin:0 0 12px;
+      color:var(--navy);
+    }
+    .footer p, .footer a{
+      margin:0 0 10px;
+      color:var(--muted);
+    }
+    .copyright{
+      margin-top:20px;
+      padding-top:20px;
+      border-top:1px solid var(--border);
+      text-align:center;
+      color:var(--muted);
+      font-size:0.92rem;
     }
 
-    .hero h1 span {
-      color: #38588d;
-    }
-
-    .hero p.lead {
-      margin: 0 0 26px;
-      font-size: 1.08rem;
-      color: var(--muted);
-      max-width: 640px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 28px;
-    }
-
-    .hero-note {
-      color: var(--muted);
-      font-size: 0.95rem;
-      font-weight: 600;
-    }
-
-    .hero-card {
-      background: #fff;
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-
-    .hero-card img {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-    }
-
-    .hero-card-content {
-      padding: 18px 20px 22px;
-    }
-
-    .hero-card-content h3 {
-      margin: 0 0 8px;
-      color: var(--navy);
-      font-size: 1.15rem;
-    }
-
-    .hero-card-content p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    section {
-      padding: 76px 0;
-    }
-
-    .section-heading {
-      max-width: 760px;
-      margin: 0 auto 42px;
-      text-align: center;
-    }
-
-    .section-heading .tag {
-      display: inline-block;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--navy);
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .section-heading h2 {
-      margin: 0 0 12px;
-      color: var(--navy);
-      font-size: clamp(2rem, 3.8vw, 3rem);
-      line-height: 1.08;
-    }
-
-    .section-heading p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .feature-banner {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .feature-image,
-    .feature-copy {
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-      background: #fff;
-    }
-
-    .feature-image img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      min-height: 320px;
-    }
-
-    .feature-copy {
-      padding: 34px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background:
-        linear-gradient(135deg, rgba(243,221,98,0.18), rgba(234,244,251,0.7));
-    }
-
-    .feature-copy .date {
-      color: var(--muted);
-      font-weight: 700;
-      margin-bottom: 10px;
-      font-size: 0.92rem;
-    }
-
-    .feature-copy h3 {
-      margin: 0 0 14px;
-      color: var(--navy);
-      font-size: 2rem;
-      line-height: 1.12;
-    }
-
-    .feature-copy p {
-      margin: 0 0 18px;
-      color: var(--muted);
-    }
-
-    .mission-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .mission-image {
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-    }
-
-    .mission-image img {
-      width: 100%;
-      height: 430px;
-      object-fit: cover;
-    }
-
-    .mission-copy h3 {
-      margin: 0 0 12px;
-      font-size: 2rem;
-      color: var(--navy);
-    }
-
-    .mission-copy p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1.04rem;
-    }
-
-    .stats {
-      background: var(--cream);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 22px;
-    }
-
-    .stat-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      border-radius: 24px;
-      padding: 30px 22px;
-      text-align: center;
-    }
-
-    .stat-number {
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--navy);
-      font-weight: 800;
-      line-height: 1;
-      margin-bottom: 10px;
-    }
-
-    .stat-label {
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 1rem;
-    }
-
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .pillar-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .pillar-card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-
-    .pillar-card .content {
-      padding: 24px;
-    }
-
-    .pillar-card h3 {
-      margin: 0 0 10px;
-      color: var(--navy);
-      font-size: 1.35rem;
-    }
-
-    .pillar-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .services {
-      background: linear-gradient(180deg, #f8fbfe 0%, #ffffff 100%);
-    }
-
-    .services-box {
-      background: #fff;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      border-radius: 28px;
-      padding: 34px;
-    }
-
-    .services-top {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 28px;
-      align-items: center;
-      margin-bottom: 22px;
-    }
-
-    .services-top img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 20px;
-    }
-
-    .services-top h3 {
-      margin: 0 0 10px;
-      font-size: 2rem;
-      color: var(--navy);
-    }
-
-    .services-top p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .sdg-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px 26px;
-      margin-top: 26px;
-    }
-
-    .sdg-item {
-      background: #f8fafc;
-      border: 1px solid rgba(36,59,99,0.08);
-      padding: 14px 16px;
-      border-radius: 16px;
-      font-weight: 700;
-      color: var(--navy);
-    }
-
-    .cta {
-      padding-top: 10px;
-    }
-
-    .cta-box {
-      border-radius: 28px;
-      padding: 34px;
-      background: linear-gradient(135deg, var(--navy), #365b93);
-      color: white;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 20px;
-      align-items: center;
-      box-shadow: var(--shadow);
-    }
-
-    .cta-box h3 {
-      margin: 0 0 8px;
-      font-size: 2rem;
-      line-height: 1.1;
-    }
-
-    .cta-box p {
-      margin: 0;
-      max-width: 700px;
-      color: rgba(255,255,255,0.88);
-    }
-
-    .cta-box .btn {
-      background: var(--yellow);
-      color: var(--navy);
-      white-space: nowrap;
-    }
-
-    .footer {
-      padding: 60px 0 30px;
-      background: #fafbfc;
-      border-top: 1px solid var(--border);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 28px;
-      align-items: start;
-    }
-
-    .footer-brand {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .footer-brand img {
-      width: 72px;
-      height: 72px;
-      border-radius: 16px;
-      object-fit: cover;
-    }
-
-    .footer h4 {
-      margin: 0 0 12px;
-      color: var(--navy);
-      font-size: 1.05rem;
-    }
-
-    .footer p,
-    .footer a,
-    .footer li {
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .footer-links,
-    .footer-socials {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .copyright {
-      margin-top: 28px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.9rem;
-      text-align: center;
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid,
+    @media (max-width: 980px){
       .feature-banner,
       .mission-grid,
-      .services-top,
-      .cta-box,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .footer-grid,
       .pillars-grid,
-      .stats-grid,
-      .sdg-grid {
-        grid-template-columns: 1fr;
+      .stats-grid{
+        grid-template-columns:1fr;
       }
-
-      .hero-card img {
-        height: 360px;
-      }
-
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 14px 0;
-      }
-
-      .nav-links {
-        gap: 14px;
+      .nav{
+        flex-direction:column;
+        align-items:flex-start;
       }
     }
 
-    @media (max-width: 640px) {
-      .hero {
-        padding-top: 40px;
-      }
-
-      .feature-copy,
-      .services-box,
-      .cta-box {
-        padding: 24px;
-      }
-
-      .hero h1 {
-        font-size: 2.4rem;
-      }
+    @media (max-width: 640px){
+      .hero-inner{padding:70px 0;}
+      .feature-copy{padding:24px;}
     }
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="container nav">
-      <a href="#home" class="brand">
-        <img
-          src="https://static.wixstatic.com/media/16a513_43a0317988f9499b9a195066021f4cd2~mv2.png/v1/fill/w_180%2Ch_180%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/Copy%20of%20Pink%20Retro%20Giveaway%20Instagram%20Post.png"
-          alt="MaterialBank logo"
-        />
+      <a href="index.html" class="brand">
+        <img src="https://static.wixstatic.com/media/16a513_43a0317988f9499b9a195066021f4cd2~mv2.png/v1/fill/w_180%2Ch_180%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/Copy%20of%20Pink%20Retro%20Giveaway%20Instagram%20Post.png" alt="MaterialBank logo">
         <div class="brand-text">
           <small>Toronto Youth Non-Profit</small>
           <span>MaterialBank</span>
@@ -631,40 +360,28 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#impact">Our Impact</a>
+        <a href="impact.html">Our Impact</a>
         <a href="#mission">Our Mission</a>
-        <a href="#services">Services</a>
+        <a href="shop.html">Shop</a>
         <a href="#contact">Contact</a>
-        <a href="https://gofund.me/5acfd3e9" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Donate</a>
+        <a href="https://gofund.me/5acfd3e9" target="_blank" class="btn btn-primary">Donate</a>
       </nav>
     </div>
   </header>
 
-  <main id="home">
+  <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
+      <div class="container">
+        <div class="hero-inner">
           <div class="eyebrow">One Sticky Note at a Time</div>
-          <h1>MaterialBank:<br /><span>One Sticky Note at a Time</span></h1>
-          <p class="lead">
+          <h1>MaterialBank:<br>One Sticky Note at a Time</h1>
+          <p>
             Supporting academic success for marginalized youth through school supplies,
             stationery, and other materials we consider non-essential essentials.
           </p>
           <div class="hero-actions">
             <a href="#mission" class="btn btn-primary">About Us</a>
-            <a href="#contact" class="btn btn-secondary">Contact Us</a>
-          </div>
-          <div class="hero-note">Toronto Youth Non-Profit Organization</div>
-        </div>
-
-        <div class="hero-card">
-          <img
-            src="https://static.wixstatic.com/media/0c18e850e6e449c5a81de48680742097.jpg/v1/fill/w_980%2Ch_653%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/0c18e850e6e449c5a81de48680742097.jpg"
-            alt="Notebook and school supplies"
-          />
-          <div class="hero-card-content">
-            <h3>Youth-led support for students</h3>
-            <p>Helping remove barriers to learning through practical, community-based action.</p>
+            <a href="#contact" class="btn btn-light">Contact Us</a>
           </div>
         </div>
       </div>
@@ -673,21 +390,16 @@
     <section>
       <div class="container feature-banner">
         <div class="feature-image">
-          <img
-            src="https://static.wixstatic.com/media/16a513_e1dba602f24a4a9ebe8856d116826ef1~mv2.jpg/v1/fill/w_577%2Ch_588%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/16a513_e1dba602f24a4a9ebe8856d116826ef1~mv2.jpg"
-            alt="MaterialBank donation activity"
-          />
+          <img src="https://static.wixstatic.com/media/16a513_e1dba602f24a4a9ebe8856d116826ef1~mv2.jpg/v1/fill/w_577%2Ch_588%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/16a513_e1dba602f24a4a9ebe8856d116826ef1~mv2.jpg" alt="MaterialBank donation activity">
         </div>
         <div class="feature-copy">
           <div class="date">Donation • May 31, 2023</div>
           <h3>Toronto Student Foundation Receives 2000+ Items</h3>
           <p>
             Donations are at the core of what we do. Every item and every dollar helps school
-            supplies reach underserved communities across Toronto.
+            supplies reach underserved communities.
           </p>
-          <div>
-            <a href="https://gofund.me/5acfd3e9" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Support the Initiative</a>
-          </div>
+          <a href="impact.html" class="btn btn-primary">Read More</a>
         </div>
       </div>
     </section>
@@ -695,27 +407,22 @@
     <section id="mission">
       <div class="container mission-grid">
         <div class="mission-copy">
-          <div class="section-heading" style="text-align:left; margin:0 0 18px;">
-            <div class="tag">About MaterialBank</div>
-            <h2>Our Mission</h2>
-          </div>
+          <div class="tag">About MaterialBank</div>
+          <h2>Our Mission</h2>
           <h3>Making non-essential essentials accessible.</h3>
           <p>
             Inspired by the needs of our local community, our mission is to support academic
-            success for marginalized youth through supplying school supplies, stationery, and
-            other materials we consider non-essential essentials.
+            success for marginalized youth through supplying school supplies, stationery,
+            and other materials we consider non-essential essentials.
           </p>
         </div>
         <div class="mission-image">
-          <img
-            src="https://static.wixstatic.com/media/11062b_3c8295cc92a344d8b2ab1356455ab670~mv2.jpg/v1/fill/w_980%2Ch_560%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/11062b_3c8295cc92a344d8b2ab1356455ab670~mv2.jpg"
-            alt="School supplies stacked"
-          />
+          <img src="https://static.wixstatic.com/media/11062b_3c8295cc92a344d8b2ab1356455ab670~mv2.jpg/v1/fill/w_980%2Ch_560%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/11062b_3c8295cc92a344d8b2ab1356455ab670~mv2.jpg" alt="School supplies">
         </div>
       </div>
     </section>
 
-    <section id="impact" class="stats">
+    <section class="stats">
       <div class="container">
         <div class="section-heading">
           <div class="tag">Stats Since Launch</div>
@@ -745,101 +452,33 @@
         <div class="section-heading">
           <div class="tag">How We Work</div>
           <h2>Three Core Areas of Impact</h2>
-          <p>
-            Donations, awareness, and environmental responsibility all work together to strengthen
-            educational equity.
-          </p>
+          <p>Donations, awareness, and environmental responsibility all work together.</p>
         </div>
 
         <div class="pillars-grid">
           <article class="pillar-card">
-            <img
-              src="https://static.wixstatic.com/media/16a513_12f38694d4fe46c59ff734be906086d8~mv2.jpeg/v1/fill/w_490%2Ch_653%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/16a513_12f38694d4fe46c59ff734be906086d8~mv2.jpeg"
-              alt="Donation supplies"
-            />
+            <img src="https://static.wixstatic.com/media/16a513_12f38694d4fe46c59ff734be906086d8~mv2.jpeg/v1/fill/w_490%2Ch_653%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/16a513_12f38694d4fe46c59ff734be906086d8~mv2.jpeg" alt="Donation supplies">
             <div class="content">
               <h3>Donations</h3>
-              <p>
-                Donations are fundamental to our mission. 100% of monetary donations go toward
-                ensuring school supplies get to underserved communities, while item donations are
-                collected through pop-ups, drop-off locations, mail, and pick-up for larger donors.
-              </p>
+              <p>100% of monetary donations go toward helping supplies reach underserved communities.</p>
             </div>
           </article>
 
           <article class="pillar-card">
-            <img
-              src="https://static.wixstatic.com/media/16a513_e1dba602f24a4a9ebe8856d116826ef1~mv2.jpg/v1/fill/w_577%2Ch_588%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/16a513_e1dba602f24a4a9ebe8856d116826ef1~mv2.jpg"
-              alt="Awareness event table"
-            />
+            <img src="https://static.wixstatic.com/media/16a513_e1dba602f24a4a9ebe8856d116826ef1~mv2.jpg/v1/fill/w_577%2Ch_588%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/16a513_e1dba602f24a4a9ebe8856d116826ef1~mv2.jpg" alt="Awareness event">
             <div class="content">
               <h3>Awareness</h3>
-              <p>
-                Meaningful impact starts with understanding the communities we support. We prioritize
-                listening directly to people and learning what different communities identify as their needs.
-              </p>
+              <p>We listen directly to communities and learn what support they identify as their own needs.</p>
             </div>
           </article>
 
           <article class="pillar-card">
-            <img
-              src="https://static.wixstatic.com/media/nsplsh_ade35f358dd84f8e91a3158e23187f7f~mv2.jpg/v1/fill/w_480%2Ch_320%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/Image%20by%20Sigmund.jpg"
-              alt="Recycling bin"
-            />
+            <img src="https://static.wixstatic.com/media/nsplsh_ade35f358dd84f8e91a3158e23187f7f~mv2.jpg/v1/fill/w_480%2Ch_320%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/Image%20by%20Sigmund.jpg" alt="Eco friendly">
             <div class="content">
               <h3>Eco-Friendly</h3>
-              <p>
-                Our model supports communities economically and environmentally by promoting second-hand
-                use and helping reduce overconsumption through reuse.
-              </p>
+              <p>Reuse helps support communities while also reducing waste and overconsumption.</p>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="services">
-      <div class="container">
-        <div class="services-box">
-          <div class="services-top">
-            <div>
-              <div class="tag">Our Services</div>
-              <h3>How We Help Toronto</h3>
-              <p>
-                Our impact falls under a breadth of different categories. One way to understand
-                them is through the United Nations Sustainable Development Goals.
-              </p>
-            </div>
-            <img
-              src="https://static.wixstatic.com/media/16a513_7aa7e5ec38fb4457878bef819c536460~mv2.jpeg/v1/fill/w_490%2Ch_653%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/16a513_7aa7e5ec38fb4457878bef819c536460~mv2.jpeg"
-              alt="Community support"
-            />
-          </div>
-
-          <div class="sdg-grid">
-            <div class="sdg-item">1. No Poverty</div>
-            <div class="sdg-item">2. Quality Education</div>
-            <div class="sdg-item">3. Gender Equality</div>
-            <div class="sdg-item">4. Sustainable Cities &amp; Communities</div>
-            <div class="sdg-item">5. Responsible Consumption &amp; Production</div>
-            <div class="sdg-item">6. Climate Action</div>
-            <div class="sdg-item">7. Peace, Justice and Strong Institutions</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="container">
-        <div class="cta-box">
-          <div>
-            <h3>Help us keep supplies moving where they are needed most.</h3>
-            <p>
-              Join the MaterialBank initiative by donating money or school materials and helping
-              us support students across Toronto.
-            </p>
-          </div>
-          <a href="https://gofund.me/5acfd3e9" target="_blank" rel="noopener noreferrer" class="btn">Donate Now</a>
         </div>
       </div>
     </section>
@@ -850,10 +489,7 @@
       <div class="footer-grid">
         <div>
           <div class="footer-brand">
-            <img
-              src="https://static.wixstatic.com/media/16a513_43a0317988f9499b9a195066021f4cd2~mv2.png/v1/fill/w_180%2Ch_180%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/Copy%20of%20Pink%20Retro%20Giveaway%20Instagram%20Post.png"
-              alt="MaterialBank logo"
-            />
+            <img src="https://static.wixstatic.com/media/16a513_43a0317988f9499b9a195066021f4cd2~mv2.png/v1/fill/w_180%2Ch_180%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/Copy%20of%20Pink%20Retro%20Giveaway%20Instagram%20Post.png" alt="MaterialBank logo">
             <div>
               <h4>MaterialBank</h4>
               <p>Toronto youth non-profit organization</p>
@@ -863,11 +499,9 @@
 
         <div>
           <h4>Socials</h4>
-          <div class="footer-socials">
-            <a href="https://www.instagram.com/materialbank_/" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://www.tiktok.com/@thematerialbank2023" target="_blank" rel="noopener noreferrer">TikTok</a>
-            <a href="https://gofund.me/5acfd3e9" target="_blank" rel="noopener noreferrer">GoFundMe</a>
-          </div>
+          <p><a href="https://www.instagram.com/materialbank_/" target="_blank">Instagram</a></p>
+          <p><a href="https://www.tiktok.com/@thematerialbank2023" target="_blank">TikTok</a></p>
+          <p><a href="https://gofund.me/5acfd3e9" target="_blank">GoFundMe</a></p>
         </div>
 
         <div>
@@ -877,9 +511,7 @@
         </div>
       </div>
 
-      <div class="copyright">
-        © 2026 MaterialBank. Built as a static site for GitHub Pages.
-      </div>
+      <div class="copyright">© 2026 MaterialBank. Built for GitHub Pages.</div>
     </div>
   </footer>
 </body>
