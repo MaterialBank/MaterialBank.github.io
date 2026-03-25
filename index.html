@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MaterialBank</title>
+  <title>MaterialBank | Home</title>
   <meta name="description" content="MaterialBank is a Toronto youth non-profit organization supporting academic success for marginalized youth through school supplies and other non-essential essentials." />
   <style>
     :root{
@@ -28,7 +28,6 @@
       background:#fff;
       line-height:1.6;
     }
-
     a{text-decoration:none;color:inherit;}
     img{max-width:100%;display:block;}
     .container{width:min(var(--max),92%);margin:0 auto;}
@@ -37,11 +36,10 @@
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(255,255,255,0.95);
+      background:rgba(255,255,255,0.94);
       backdrop-filter:blur(10px);
       border-bottom:1px solid var(--border);
     }
-
     .nav{
       min-height:78px;
       display:flex;
@@ -50,7 +48,6 @@
       gap:24px;
       padding:10px 0;
     }
-
     .brand{
       display:flex;
       align-items:center;
@@ -58,14 +55,12 @@
       color:var(--navy);
       font-weight:700;
     }
-
     .brand img{
       width:54px;
       height:54px;
       border-radius:14px;
       object-fit:cover;
     }
-
     .brand-text small{
       display:block;
       font-size:0.72rem;
@@ -73,11 +68,9 @@
       letter-spacing:0.08em;
       color:var(--muted);
     }
-
     .brand-text span{
       font-size:1.15rem;
     }
-
     .nav-links{
       display:flex;
       align-items:center;
@@ -86,56 +79,7 @@
       font-weight:700;
       color:var(--navy);
     }
-
-    .nav-links a,
-    .dropbtn{
-      cursor:pointer;
-      background:none;
-      border:none;
-      font:inherit;
-      color:inherit;
-      padding:10px 0;
-    }
-
-    .nav-links a:hover,
-    .dropbtn:hover{
-      opacity:0.75;
-    }
-
-    .dropdown{
-      position:relative;
-      display:inline-block;
-    }
-
-    .dropdown-content{
-      display:none;
-      position:absolute;
-      top:100%;
-      left:0;
-      min-width:210px;
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:16px;
-      box-shadow:var(--shadow);
-      padding:8px;
-      z-index:1200;
-    }
-
-    .dropdown-content a{
-      display:block;
-      padding:10px 14px;
-      border-radius:12px;
-      font-weight:600;
-    }
-
-    .dropdown-content a:hover{
-      background:#f6f9fc;
-      opacity:1;
-    }
-
-    .dropdown.open .dropdown-content{
-      display:block;
-    }
+    .nav-links a:hover{opacity:0.75;}
 
     .btn{
       display:inline-flex;
@@ -146,27 +90,16 @@
       font-weight:700;
       transition:0.2s ease;
     }
-
     .btn-primary{
       background:var(--navy);
       color:#fff;
       box-shadow:var(--shadow);
     }
-
     .btn-primary:hover{transform:translateY(-1px);}
-
     .btn-light{
       background:#fff;
       color:var(--navy);
-      border:1px solid rgba(255,255,255,0.45);
-    }
-
-    .page{
-      display:none;
-    }
-
-    .page.active{
-      display:block;
+      border:1px solid rgba(255,255,255,0.4);
     }
 
     .hero{
@@ -180,12 +113,10 @@
         center/cover no-repeat;
       color:#fff;
     }
-
     .hero-inner{
       padding:90px 0;
       max-width:760px;
     }
-
     .eyebrow{
       display:inline-block;
       padding:8px 14px;
@@ -198,20 +129,17 @@
       letter-spacing:0.04em;
       margin-bottom:18px;
     }
-
     .hero h1{
       margin:0 0 14px;
       font-size:clamp(2.5rem,6vw,4.8rem);
       line-height:1.02;
     }
-
     .hero p{
       margin:0 0 26px;
       font-size:1.08rem;
       max-width:640px;
       color:rgba(255,255,255,0.92);
     }
-
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
@@ -219,13 +147,11 @@
     }
 
     section{padding:76px 0;}
-
     .section-heading{
       text-align:center;
       max-width:760px;
       margin:0 auto 40px;
     }
-
     .tag{
       display:inline-block;
       color:var(--navy);
@@ -235,14 +161,12 @@
       letter-spacing:0.08em;
       margin-bottom:10px;
     }
-
     h2{
       margin:0 0 10px;
       color:var(--navy);
       font-size:clamp(2rem,4vw,3rem);
       line-height:1.08;
     }
-
     .section-heading p{margin:0;color:var(--muted);}
 
     .feature-banner{
@@ -251,7 +175,6 @@
       gap:28px;
       align-items:stretch;
     }
-
     .feature-image, .feature-copy{
       border-radius:var(--radius);
       overflow:hidden;
@@ -259,14 +182,12 @@
       box-shadow:var(--shadow);
       background:#fff;
     }
-
     .feature-image img{
       width:100%;
       height:100%;
       min-height:320px;
       object-fit:cover;
     }
-
     .feature-copy{
       padding:34px;
       display:flex;
@@ -274,21 +195,18 @@
       justify-content:center;
       background:linear-gradient(135deg, rgba(243,221,98,0.20), rgba(234,244,251,0.75));
     }
-
     .feature-copy .date{
       color:var(--muted);
       font-weight:700;
       margin-bottom:10px;
       font-size:0.92rem;
     }
-
     .feature-copy h3{
       margin:0 0 12px;
       color:var(--navy);
       font-size:2rem;
       line-height:1.12;
     }
-
     .feature-copy p{margin:0 0 18px;color:var(--muted);}
 
     .mission-grid{
@@ -297,26 +215,22 @@
       gap:28px;
       align-items:center;
     }
-
     .mission-copy h3{
       margin:0 0 12px;
       color:var(--navy);
       font-size:2rem;
     }
-
     .mission-copy p{
       margin:0;
       color:var(--muted);
       font-size:1.04rem;
     }
-
     .mission-image{
       border-radius:var(--radius);
       overflow:hidden;
       box-shadow:var(--shadow);
       border:1px solid var(--border);
     }
-
     .mission-image img{
       width:100%;
       height:420px;
@@ -326,13 +240,11 @@
     .stats{
       background:#fffdf6;
     }
-
     .stats-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:22px;
     }
-
     .stat-card{
       background:#fff;
       border:1px solid var(--border);
@@ -341,7 +253,6 @@
       padding:28px 20px;
       text-align:center;
     }
-
     .stat-number{
       font-size:clamp(2rem,4vw,3rem);
       line-height:1;
@@ -349,7 +260,6 @@
       font-weight:800;
       margin-bottom:10px;
     }
-
     .stat-label{
       color:var(--muted);
       font-weight:700;
@@ -360,7 +270,6 @@
       grid-template-columns:repeat(3,1fr);
       gap:24px;
     }
-
     .pillar-card{
       background:#fff;
       border:1px solid var(--border);
@@ -368,171 +277,48 @@
       overflow:hidden;
       box-shadow:var(--shadow);
     }
-
     .pillar-card img{
       width:100%;
       height:220px;
       object-fit:cover;
     }
-
     .pillar-card .content{padding:22px;}
-
     .pillar-card h3{
       margin:0 0 10px;
       color:var(--navy);
       font-size:1.3rem;
     }
-
     .pillar-card p{margin:0;color:var(--muted);}
-
-    .simple-hero{
-      padding:80px 0 50px;
-      background:linear-gradient(135deg, #fffef7, #f5faff);
-      text-align:center;
-    }
-
-    .simple-hero h1{
-      margin:0 0 10px;
-      color:var(--navy);
-      font-size:clamp(2.3rem,5vw,4rem);
-    }
-
-    .simple-hero p{
-      margin:0 auto;
-      max-width:760px;
-      color:var(--muted);
-    }
-
-    .impact-list{
-      padding:50px 0 70px;
-      display:grid;
-      gap:28px;
-    }
-
-    .impact-card{
-      display:grid;
-      grid-template-columns:320px 1fr;
-      gap:24px;
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:24px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-    }
-
-    .impact-card img{
-      width:100%;
-      height:100%;
-      min-height:260px;
-      object-fit:cover;
-    }
-
-    .impact-content{padding:24px;}
-
-    .impact-content h3{
-      margin:0 0 10px;
-      color:var(--navy);
-      font-size:1.5rem;
-      line-height:1.2;
-    }
-
-    .impact-content p{
-      margin:0;
-      color:var(--muted);
-    }
-
-    .note{
-      margin:0 auto 28px;
-      max-width:900px;
-      text-align:center;
-      color:var(--muted);
-    }
-
-    .grid{
-      padding:36px 0 70px;
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:22px;
-    }
-
-    .product{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:24px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-
-    .product-image{
-      height:170px;
-      background:linear-gradient(135deg, #f3dd62, #eaf4fb);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--navy);
-      font-size:2rem;
-      font-weight:800;
-    }
-
-    .product-content{padding:18px;}
-
-    .product h3{
-      margin:0 0 8px;
-      color:var(--navy);
-      font-size:1.15rem;
-    }
-
-    .product p{
-      margin:0 0 14px;
-      color:var(--muted);
-      font-size:0.95rem;
-    }
-
-    .status-tag{
-      display:inline-block;
-      padding:8px 12px;
-      border-radius:999px;
-      background:#f8fafc;
-      color:var(--navy);
-      font-weight:700;
-      font-size:0.85rem;
-    }
 
     .footer{
       background:#fafbfc;
       border-top:1px solid var(--border);
       padding:56px 0 30px;
     }
-
     .footer-grid{
       display:grid;
       grid-template-columns:1fr 1fr 1fr;
       gap:28px;
     }
-
     .footer-brand{
       display:flex;
       align-items:center;
       gap:16px;
     }
-
     .footer-brand img{
       width:70px;
       height:70px;
       border-radius:16px;
       object-fit:cover;
     }
-
     .footer h4{
       margin:0 0 12px;
       color:var(--navy);
     }
-
     .footer p, .footer a{
       margin:0 0 10px;
       color:var(--muted);
     }
-
     .copyright{
       margin-top:20px;
       padding-top:20px;
@@ -542,20 +328,14 @@
       font-size:0.92rem;
     }
 
-    @media (max-width: 1000px){
-      .grid{grid-template-columns:repeat(2,1fr);}
-    }
-
     @media (max-width: 980px){
       .feature-banner,
       .mission-grid,
       .footer-grid,
       .pillars-grid,
-      .stats-grid,
-      .impact-card{
+      .stats-grid{
         grid-template-columns:1fr;
       }
-
       .nav{
         flex-direction:column;
         align-items:flex-start;
@@ -565,14 +345,13 @@
     @media (max-width: 640px){
       .hero-inner{padding:70px 0;}
       .feature-copy{padding:24px;}
-      .grid{grid-template-columns:1fr;}
     }
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="container nav">
-      <a href="#" class="brand" onclick="showPage('home'); return false;">
+      <a href="index.html" class="brand">
         <img src="https://static.wixstatic.com/media/16a513_43a0317988f9499b9a195066021f4cd2~mv2.png/v1/fill/w_180%2Ch_180%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/Copy%20of%20Pink%20Retro%20Giveaway%20Instagram%20Post.png" alt="MaterialBank logo">
         <div class="brand-text">
           <small>Toronto Youth Non-Profit</small>
@@ -581,304 +360,128 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#" onclick="showPage('home'); return false;">Home</a>
-
-        <div class="dropdown" id="menuDropdown">
-          <button class="dropbtn" onclick="toggleDropdown()">Explore ▾</button>
-          <div class="dropdown-content">
-            <a href="#" onclick="showPage('home'); closeDropdown(); return false;">Home</a>
-            <a href="#" onclick="showPage('impact'); closeDropdown(); return false;">Our Impact</a>
-            <a href="#" onclick="showPage('shop'); closeDropdown(); return false;">Shop</a>
-          </div>
-        </div>
-
-        <a href="#" onclick="showPage('impact'); return false;">Our Impact</a>
-        <a href="#" onclick="showPage('shop'); return false;">Shop</a>
+        <a href="impact.html">Our Impact</a>
+        <a href="#mission">Our Mission</a>
+        <a href="shop.html">Shop</a>
         <a href="#contact">Contact</a>
-        <a href="https://gofund.me/5acfd3e9" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Donate</a>
+        <a href="https://gofund.me/5acfd3e9" target="_blank" class="btn btn-primary">Donate</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <div id="home" class="page active">
-      <section class="hero">
-        <div class="container">
-          <div class="hero-inner">
-            <div class="eyebrow">One Sticky Note at a Time</div>
-            <h1>MaterialBank:<br>One Sticky Note at a Time</h1>
-            <p>
-              Supporting academic success for marginalized youth through school supplies,
-              stationery, and other materials we consider non-essential essentials.
-            </p>
-            <div class="hero-actions">
-              <a href="#mission" class="btn btn-primary">About Us</a>
-              <a href="#contact" class="btn btn-light">Contact Us</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container feature-banner">
-          <div class="feature-image">
-            <img src="https://static.wixstatic.com/media/16a513_e1dba602f24a4a9ebe8856d116826ef1~mv2.jpg/v1/fill/w_577%2Ch_588%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/16a513_e1dba602f24a4a9ebe8856d116826ef1~mv2.jpg" alt="MaterialBank donation activity">
-          </div>
-          <div class="feature-copy">
-            <div class="date">Donation • May 31, 2023</div>
-            <h3>Toronto Student Foundation Receives 2000+ Items</h3>
-            <p>
-              Donations are at the core of what we do. Every item and every dollar helps school
-              supplies reach underserved communities.
-            </p>
-            <a href="#" onclick="showPage('impact'); return false;" class="btn btn-primary">Read More</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="mission">
-        <div class="container mission-grid">
-          <div class="mission-copy">
-            <div class="tag">About MaterialBank</div>
-            <h2>Our Mission</h2>
-            <h3>Making non-essential essentials accessible.</h3>
-            <p>
-              Inspired by the needs of our local community, our mission is to support academic
-              success for marginalized youth through supplying school supplies, stationery,
-              and other materials we consider non-essential essentials.
-            </p>
-          </div>
-          <div class="mission-image">
-            <img src="https://static.wixstatic.com/media/11062b_3c8295cc92a344d8b2ab1356455ab670~mv2.jpg/v1/fill/w_980%2Ch_560%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/11062b_3c8295cc92a344d8b2ab1356455ab670~mv2.jpg" alt="School supplies">
-          </div>
-        </div>
-      </section>
-
-      <section class="stats">
-        <div class="container">
-          <div class="section-heading">
-            <div class="tag">Stats Since Launch</div>
-            <h2>Impact Since March 2023</h2>
-            <p>These numbers reflect the direct reach of MaterialBank’s work.</p>
-          </div>
-
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="stat-number">25,000+</div>
-              <div class="stat-label">Materials Donated</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">$3,000+</div>
-              <div class="stat-label">Funds Awarded</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">13</div>
-              <div class="stat-label">Partnerships</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="container">
-          <div class="section-heading">
-            <div class="tag">How We Work</div>
-            <h2>Three Core Areas of Impact</h2>
-            <p>Donations, awareness, and environmental responsibility all work together.</p>
-          </div>
-
-          <div class="pillars-grid">
-            <article class="pillar-card">
-              <img src="https://static.wixstatic.com/media/16a513_12f38694d4fe46c59ff734be906086d8~mv2.jpeg/v1/fill/w_490%2Ch_653%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/16a513_12f38694d4fe46c59ff734be906086d8~mv2.jpeg" alt="Donation supplies">
-              <div class="content">
-                <h3>Donations</h3>
-                <p>100% of monetary donations go toward helping supplies reach underserved communities.</p>
-              </div>
-            </article>
-
-            <article class="pillar-card">
-              <img src="https://static.wixstatic.com/media/16a513_e1dba602f24a4a9ebe8856d116826ef1~mv2.jpg/v1/fill/w_577%2Ch_588%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/16a513_e1dba602f24a4a9ebe8856d116826ef1~mv2.jpg" alt="Awareness event">
-              <div class="content">
-                <h3>Awareness</h3>
-                <p>We listen directly to communities and learn what support they identify as their own needs.</p>
-              </div>
-            </article>
-
-            <article class="pillar-card">
-              <img src="https://static.wixstatic.com/media/nsplsh_ade35f358dd84f8e91a3158e23187f7f~mv2.jpg/v1/fill/w_480%2Ch_320%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/Image%20by%20Sigmund.jpg" alt="Eco friendly">
-              <div class="content">
-                <h3>Eco-Friendly</h3>
-                <p>Reuse helps support communities while also reducing waste and overconsumption.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <div id="impact" class="page">
-      <section class="simple-hero">
-        <div class="container">
-          <h1>Organizations We've Donated To</h1>
-          <p>
-            A look at the communities and organizations MaterialBank has supported through
-            school and art supply donations.
-          </p>
-        </div>
-      </section>
-
-      <section class="container impact-list">
-        <article class="impact-card">
-          <img src="https://static.wixstatic.com/media/16a513_b616bf3ef0e241b48f93372d5357b943~mv2.jpeg" alt="Pathways to Education Program">
-          <div class="impact-content">
-            <h3>Pathways to Education Program</h3>
-            <p>On July 7th, 2024, we donated hundreds of school supplies to the Pathways to Education Program at their Regent Park Community Health Centre site. This donation aims to support 560 high school students in downtown east core areas who are part of their Youth Enrichment Academy.</p>
-          </div>
-        </article>
-
-        <article class="impact-card">
-          <img src="https://static.wixstatic.com/media/Image20240215125107.png" alt="YWCA Toronto Girls Centre">
-          <div class="impact-content">
-            <h3>YWCA Toronto Girls Centre</h3>
-            <p>On January 24th, 2024, we donated a wide range of school supplies such as binders and textbooks. YWCA Toronto Girls Centre provides mental health, educational, and leadership programs to help students thrive academically.</p>
-          </div>
-        </article>
-
-        <article class="impact-card">
-          <img src="https://static.wixstatic.com/media/Image20231112223415.png" alt="Kids of Incarcerated Parents">
-          <div class="impact-content">
-            <h3>Kids of Incarcerated Parents (KIP Canada)</h3>
-            <p>On August 9th, 2023, we donated 2,105 school and art supplies ranging from erasers to binders. KIP Canada supports children whose families are affected by the justice system.</p>
-          </div>
-        </article>
-
-        <article class="impact-card">
-          <img src="https://static.wixstatic.com/media/IMG_0606_edited.jpg" alt="Toronto Foundation for Student Success">
-          <div class="impact-content">
-            <h3>Toronto Foundation for Student Success</h3>
-            <p>On May 31, we donated 7 bags with over 2,000 items, totaling 2,852 materials. These donations supported the Beyond 3:30 after-school program for children ages 8–14.</p>
-          </div>
-        </article>
-
-        <article class="impact-card">
-          <img src="https://static.wixstatic.com/media/IMG_3659.jpeg" alt="CAMH">
-          <div class="impact-content">
-            <h3>The Centre for Addiction and Mental Health (CAMH)</h3>
-            <p>On November 29th, 2023, we donated art supplies ranging from marker kits to oil pastels for CAMH’s Gifts of Light program, which helps support patient wellness and transition back into the community.</p>
-          </div>
-        </article>
-      </section>
-    </div>
-
-    <div id="shop" class="page">
-      <section class="simple-hero">
-        <div class="container">
-          <h1>All Products</h1>
-          <p>
-            Below is our current inventory of items available for donation. Products include a mix
-            of new and gently used items.
-          </p>
-        </div>
-      </section>
-
+    <section class="hero">
       <div class="container">
-        <p class="note">
-          This is a static GitHub Pages shop-style page. It works like a catalog.
-        </p>
-
-        <section class="grid">
-          <article class="product">
-            <div class="product-image">✏️</div>
-            <div class="product-content">
-              <h3>Pencil</h3>
-              <p>Basic writing supplies for school use.</p>
-              <span class="status-tag">Available</span>
-            </div>
-          </article>
-
-          <article class="product">
-            <div class="product-image">📁</div>
-            <div class="product-content">
-              <h3>Binder</h3>
-              <p>Useful for organizing notes and worksheets.</p>
-              <span class="status-tag">Available</span>
-            </div>
-          </article>
-
-          <article class="product">
-            <div class="product-image">🖍️</div>
-            <div class="product-content">
-              <h3>Crayola Marker</h3>
-              <p>Art and classroom supplies for creative activities.</p>
-              <span class="status-tag">Available</span>
-            </div>
-          </article>
-
-          <article class="product">
-            <div class="product-image">👜</div>
-            <div class="product-content">
-              <h3>Pencil Case</h3>
-              <p>Helps keep school materials organized.</p>
-              <span class="status-tag">Available</span>
-            </div>
-          </article>
-
-          <article class="product">
-            <div class="product-image">🌈</div>
-            <div class="product-content">
-              <h3>Coloured Pencil Crayons</h3>
-              <p>Useful for classroom projects and art.</p>
-              <span class="status-tag">Available</span>
-            </div>
-          </article>
-
-          <article class="product">
-            <div class="product-image">📓</div>
-            <div class="product-content">
-              <h3>Notebook</h3>
-              <p>Everyday notebook for learning and note-taking.</p>
-              <span class="status-tag">Available</span>
-            </div>
-          </article>
-
-          <article class="product">
-            <div class="product-image">🟨</div>
-            <div class="product-content">
-              <h3>Sticky Note</h3>
-              <p>Small but important for reminders and organization.</p>
-              <span class="status-tag">Available</span>
-            </div>
-          </article>
-
-          <article class="product">
-            <div class="product-image">💧</div>
-            <div class="product-content">
-              <h3>Water Bottles</h3>
-              <p>Reusable items for everyday student use.</p>
-              <span class="status-tag">Available</span>
-            </div>
-          </article>
-
-          <article class="product">
-            <div class="product-image">🖊️</div>
-            <div class="product-content">
-              <h3>Ballpoint Blue Pen</h3>
-              <p>Reliable writing materials for students.</p>
-              <span class="status-tag">Available</span>
-            </div>
-          </article>
-
-          <article class="product">
-            <div class="product-image">🖌️</div>
-            <div class="product-content">
-              <h3>Paint Brushes</h3>
-              <p>Art supplies for creative learning and activities.</p>
-              <span class="status-tag">Available</span>
-            </div>
-          </article>
-        </section>
+        <div class="hero-inner">
+          <div class="eyebrow">One Sticky Note at a Time</div>
+          <h1>MaterialBank:<br>One Sticky Note at a Time</h1>
+          <p>
+            Supporting academic success for marginalized youth through school supplies,
+            stationery, and other materials we consider non-essential essentials.
+          </p>
+          <div class="hero-actions">
+            <a href="#mission" class="btn btn-primary">About Us</a>
+            <a href="#contact" class="btn btn-light">Contact Us</a>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <section>
+      <div class="container feature-banner">
+        <div class="feature-image">
+          <img src="https://static.wixstatic.com/media/16a513_e1dba602f24a4a9ebe8856d116826ef1~mv2.jpg/v1/fill/w_577%2Ch_588%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/16a513_e1dba602f24a4a9ebe8856d116826ef1~mv2.jpg" alt="MaterialBank donation activity">
+        </div>
+        <div class="feature-copy">
+          <div class="date">Donation • May 31, 2023</div>
+          <h3>Toronto Student Foundation Receives 2000+ Items</h3>
+          <p>
+            Donations are at the core of what we do. Every item and every dollar helps school
+            supplies reach underserved communities.
+          </p>
+          <a href="impact.html" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="mission">
+      <div class="container mission-grid">
+        <div class="mission-copy">
+          <div class="tag">About MaterialBank</div>
+          <h2>Our Mission</h2>
+          <h3>Making non-essential essentials accessible.</h3>
+          <p>
+            Inspired by the needs of our local community, our mission is to support academic
+            success for marginalized youth through supplying school supplies, stationery,
+            and other materials we consider non-essential essentials.
+          </p>
+        </div>
+        <div class="mission-image">
+          <img src="https://static.wixstatic.com/media/11062b_3c8295cc92a344d8b2ab1356455ab670~mv2.jpg/v1/fill/w_980%2Ch_560%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/11062b_3c8295cc92a344d8b2ab1356455ab670~mv2.jpg" alt="School supplies">
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container">
+        <div class="section-heading">
+          <div class="tag">Stats Since Launch</div>
+          <h2>Impact Since March 2023</h2>
+          <p>These numbers reflect the direct reach of MaterialBank’s work.</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">25,000+</div>
+            <div class="stat-label">Materials Donated</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">$3,000+</div>
+            <div class="stat-label">Funds Awarded</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">13</div>
+            <div class="stat-label">Partnerships</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <div class="tag">How We Work</div>
+          <h2>Three Core Areas of Impact</h2>
+          <p>Donations, awareness, and environmental responsibility all work together.</p>
+        </div>
+
+        <div class="pillars-grid">
+          <article class="pillar-card">
+            <img src="https://static.wixstatic.com/media/16a513_12f38694d4fe46c59ff734be906086d8~mv2.jpeg/v1/fill/w_490%2Ch_653%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/16a513_12f38694d4fe46c59ff734be906086d8~mv2.jpeg" alt="Donation supplies">
+            <div class="content">
+              <h3>Donations</h3>
+              <p>100% of monetary donations go toward helping supplies reach underserved communities.</p>
+            </div>
+          </article>
+
+          <article class="pillar-card">
+            <img src="https://static.wixstatic.com/media/16a513_e1dba602f24a4a9ebe8856d116826ef1~mv2.jpg/v1/fill/w_577%2Ch_588%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/16a513_e1dba602f24a4a9ebe8856d116826ef1~mv2.jpg" alt="Awareness event">
+            <div class="content">
+              <h3>Awareness</h3>
+              <p>We listen directly to communities and learn what support they identify as their own needs.</p>
+            </div>
+          </article>
+
+          <article class="pillar-card">
+            <img src="https://static.wixstatic.com/media/nsplsh_ade35f358dd84f8e91a3158e23187f7f~mv2.jpg/v1/fill/w_480%2Ch_320%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/Image%20by%20Sigmund.jpg" alt="Eco friendly">
+            <div class="content">
+              <h3>Eco-Friendly</h3>
+              <p>Reuse helps support communities while also reducing waste and overconsumption.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer id="contact" class="footer">
@@ -896,9 +499,9 @@
 
         <div>
           <h4>Socials</h4>
-          <p><a href="https://www.instagram.com/materialbank_/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
-          <p><a href="https://www.tiktok.com/@thematerialbank2023" target="_blank" rel="noopener noreferrer">TikTok</a></p>
-          <p><a href="https://gofund.me/5acfd3e9" target="_blank" rel="noopener noreferrer">GoFundMe</a></p>
+          <p><a href="https://www.instagram.com/materialbank_/" target="_blank">Instagram</a></p>
+          <p><a href="https://www.tiktok.com/@thematerialbank2023" target="_blank">TikTok</a></p>
+          <p><a href="https://gofund.me/5acfd3e9" target="_blank">GoFundMe</a></p>
         </div>
 
         <div>
@@ -911,33 +514,5 @@
       <div class="copyright">© 2026 MaterialBank. Built for GitHub Pages.</div>
     </div>
   </footer>
-
-  <script>
-    function showPage(pageId) {
-      const pages = document.querySelectorAll('.page');
-      pages.forEach(page => page.classList.remove('active'));
-
-      const selectedPage = document.getElementById(pageId);
-      if (selectedPage) {
-        selectedPage.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    }
-
-    function toggleDropdown() {
-      document.getElementById('menuDropdown').classList.toggle('open');
-    }
-
-    function closeDropdown() {
-      document.getElementById('menuDropdown').classList.remove('open');
-    }
-
-    document.addEventListener('click', function(event) {
-      const dropdown = document.getElementById('menuDropdown');
-      if (!dropdown.contains(event.target)) {
-        closeDropdown();
-      }
-    });
-  </script>
 </body>
 </html>
