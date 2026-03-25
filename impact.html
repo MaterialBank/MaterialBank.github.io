@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MaterialBank | Our Impact</title>
+  <style>
+    :root{
+      --navy:#243b63;
+      --yellow:#f3dd62;
+      --text:#243043;
+      --muted:#5d6a7c;
+      --border:rgba(36,59,99,0.12);
+      --shadow:0 12px 28px rgba(36,59,99,0.10);
+      --radius:22px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:Arial, Helvetica, sans-serif;color:var(--text);line-height:1.6;background:#fff;}
+    a{text-decoration:none;color:inherit;}
+    img{max-width:100%;display:block;}
+    .container{width:min(var(--max),92%);margin:0 auto;}
+
+    .topbar{
+      position:sticky;top:0;z-index:1000;
+      background:rgba(255,255,255,0.94);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{
+      min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px 0;
+    }
+    .brand{display:flex;align-items:center;gap:14px;color:var(--navy);font-weight:700;}
+    .brand img{width:54px;height:54px;border-radius:14px;object-fit:cover;}
+    .nav-links{display:flex;gap:18px;flex-wrap:wrap;font-weight:700;color:var(--navy);}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 22px;border-radius:999px;font-weight:700;
+      background:var(--navy);color:#fff;
+    }
+
+    .hero{
+      padding:80px 0 50px;
+      background:linear-gradient(135deg, #fffef7, #f5faff);
+      text-align:center;
+    }
+    .hero h1{margin:0 0 10px;color:var(--navy);font-size:clamp(2.3rem,5vw,4rem);}
+    .hero p{margin:0 auto;max-width:760px;color:var(--muted);}
+
+    .impact-list{
+      padding:50px 0 70px;
+      display:grid;
+      gap:28px;
+    }
+    .impact-card{
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:24px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .impact-card img{
+      width:100%;
+      height:100%;
+      min-height:260px;
+      object-fit:cover;
+    }
+    .impact-content{padding:24px;}
+    .impact-content h2{
+      margin:0 0 10px;
+      color:var(--navy);
+      font-size:1.5rem;
+      line-height:1.2;
+    }
+    .impact-content p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .footer{
+      background:#fafbfc;border-top:1px solid var(--border);padding:30px 0;text-align:center;color:var(--muted);
+    }
+
+    @media (max-width: 900px){
+      .impact-card{grid-template-columns:1fr;}
+      .nav{flex-direction:column;align-items:flex-start;}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="https://static.wixstatic.com/media/16a513_43a0317988f9499b9a195066021f4cd2~mv2.png/v1/fill/w_180%2Ch_180%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/Copy%20of%20Pink%20Retro%20Giveaway%20Instagram%20Post.png" alt="MaterialBank logo">
+        <span>MaterialBank</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="impact.html">Our Impact</a>
+        <a href="shop.html">Shop</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="https://gofund.me/5acfd3e9" target="_blank" class="btn">Donate</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Organizations We've Donated To</h1>
+      <p>
+        A look at the communities and organizations MaterialBank has supported through
+        school and art supply donations.
+      </p>
+    </div>
+  </section>
+
+  <main class="container impact-list">
+    <article class="impact-card">
+      <img src="https://static.wixstatic.com/media/16a513_b616bf3ef0e241b48f93372d5357b943~mv2.jpeg" alt="Pathways to Education Program">
+      <div class="impact-content">
+        <h2>Pathways to Education Program</h2>
+        <p>On July 7th, 2024, we donated hundreds of school supplies to the Pathways to Education Program at their Regent Park Community Health Centre site. This donation aims to support 560 high school students in downtown east core areas who are part of their Youth Enrichment Academy.</p>
+      </div>
+    </article>
+
+    <article class="impact-card">
+      <img src="https://static.wixstatic.com/media/IMG_5395_edited.jpg" alt="Horizons for Youth">
+      <div class="impact-content">
+        <h2>Horizons for Youth</h2>
+        <p>On October 25th, 2024, we visited Horizons for Youth and donated school and art supplies along with over 50 backpacks to support student residents. Horizons for Youth provides holistic support and housing for at-risk and homeless youth ages 16–24 in Toronto.</p>
+      </div>
+    </article>
+
+    <article class="impact-card">
+      <img src="https://static.wixstatic.com/media/Image20240215125107.png" alt="YWCA Toronto Girls Centre">
+      <div class="impact-content">
+        <h2>YWCA Toronto Girls Centre</h2>
+        <p>On January 24th, 2024, we donated a wide range of school supplies such as binders and textbooks. YWCA Toronto Girls Centre provides mental health, educational, and leadership programs to help students thrive academically.</p>
+      </div>
+    </article>
+
+    <article class="impact-card">
+      <img src="https://static.wixstatic.com/media/Image20231112223415.png" alt="Kids of Incarcerated Parents">
+      <div class="impact-content">
+        <h2>Kids of Incarcerated Parents (KIP Canada)</h2>
+        <p>On August 9th, 2023, we donated 2,105 school and art supplies ranging from erasers to binders. KIP Canada supports children whose families are affected by the justice system.</p>
+      </div>
+    </article>
+
+    <article class="impact-card">
+      <img src="https://static.wixstatic.com/media/94DEE8AE-31E9-4172-B608-660AD93453A6.jpeg" alt="Native Child and Family Services of Toronto">
+      <div class="impact-content">
+        <h2>The Native Child and Family Services of Toronto</h2>
+        <p>On August 9th, 2023, we donated 1,872 school and art supplies, from pens to backpacks, for their back-to-school initiative. The organization provides youth and educational programs and supports children and families in the community.</p>
+      </div>
+    </article>
+
+    <article class="impact-card">
+      <img src="https://static.wixstatic.com/media/IMG_0606_edited.jpg" alt="Toronto Foundation for Student Success">
+      <div class="impact-content">
+        <h2>Toronto Foundation for Student Success</h2>
+        <p>On May 31, we donated 7 bags with over 2,000 items, totaling 2,852 materials. These donations supported the Beyond 3:30 after-school program for children ages 8–14.</p>
+      </div>
+    </article>
+
+    <article class="impact-card">
+      <img src="https://static.wixstatic.com/media/46E25DF8-732C-40CC-B8D2-4C7E36120846_edi" alt="Friends of Ruby">
+      <div class="impact-content">
+        <h2>Friends of Ruby</h2>
+        <p>On May 26, we donated 1,649 school and art supplies that support art programs as a welcoming space for 2SLGBTQIA+ youth in Toronto.</p>
+      </div>
+    </article>
+
+    <article class="impact-card">
+      <img src="https://static.wixstatic.com/media/image.png" alt="Christopher's Haven and Boston House">
+      <div class="impact-content">
+        <h2>Christopher's Haven and Boston House</h2>
+        <p>MaterialBank and Our Sunrise travelled to Boston and donated school and art supplies including crayons and sketchbooks to support children with cancer and their families.</p>
+      </div>
+    </article>
+
+    <article class="impact-card">
+      <img src="https://static.wixstatic.com/media/IMG_3659.jpeg" alt="CAMH">
+      <div class="impact-content">
+        <h2>The Centre for Addiction and Mental Health (CAMH)</h2>
+        <p>On November 29th, 2023, we donated art supplies ranging from marker kits to oil pastels for CAMH’s Gifts of Light program, which helps support patient wellness and transition back into the community.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p><a href="mailto:thematerialbank2023@gmail.com">thematerialbank2023@gmail.com</a></p>
+      <p>© 2026 MaterialBank</p>
+    </div>
+  </footer>
+</body>
+</html>
