@@ -15,78 +15,204 @@
       --radius:22px;
       --max:1180px;
     }
+
     *{box-sizing:border-box;}
-    body{margin:0;font-family:Arial, Helvetica, sans-serif;color:var(--text);line-height:1.6;background:#fff;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      line-height:1.6;
+      background:#fff;
+    }
+
     a{text-decoration:none;color:inherit;}
     img{max-width:100%;display:block;}
     .container{width:min(var(--max),92%);margin:0 auto;}
 
     .topbar{
-      position:sticky;top:0;z-index:1000;
+      position:sticky;
+      top:0;
+      z-index:1000;
       background:rgba(255,255,255,0.94);
       backdrop-filter:blur(10px);
       border-bottom:1px solid var(--border);
     }
+
     .nav{
-      min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px 0;
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      padding:10px 0;
     }
-    .brand{display:flex;align-items:center;gap:14px;color:var(--navy);font-weight:700;}
-    .brand img{width:54px;height:54px;border-radius:14px;object-fit:cover;}
-    .nav-links{display:flex;gap:18px;flex-wrap:wrap;font-weight:700;color:var(--navy);}
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      color:var(--navy);
+      font-weight:700;
+    }
+
+    .brand img{
+      width:54px;
+      height:54px;
+      border-radius:14px;
+      object-fit:cover;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      font-weight:700;
+      color:var(--navy);
+    }
+
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:12px 22px;border-radius:999px;font-weight:700;
-      background:var(--navy);color:#fff;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 22px;
+      border-radius:999px;
+      font-weight:700;
+      background:var(--navy);
+      color:#fff;
     }
 
     .hero{
-      padding:80px 0 50px;
+      position:relative;
+      padding:90px 0 70px;
+      overflow:hidden;
       background:linear-gradient(135deg, #fffef7, #f5faff);
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(255,255,255,0.70);
+      z-index:1;
+    }
+
+    .hero-grid{
+      position:absolute;
+      inset:0;
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      z-index:0;
+    }
+
+    .hero-grid div{
+      background-size:cover;
+      background-position:center;
+      min-height:100%;
+      filter:saturate(0.95);
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
       text-align:center;
     }
-    .hero h1{margin:0 0 10px;color:var(--navy);font-size:clamp(2.3rem,5vw,4rem);}
-    .hero p{margin:0 auto;max-width:760px;color:var(--muted);}
+
+    .hero h1{
+      margin:0 0 12px;
+      color:var(--navy);
+      font-size:clamp(2.5rem,5vw,4.2rem);
+    }
+
+    .hero p{
+      margin:0 auto;
+      max-width:760px;
+      color:#243043;
+      font-size:1.05rem;
+      font-weight:500;
+    }
 
     .impact-list{
-      padding:50px 0 70px;
+      padding:55px 0 80px;
       display:grid;
-      gap:28px;
+      gap:34px;
     }
+
     .impact-card{
-      display:grid;
-      grid-template-columns:320px 1fr;
-      gap:24px;
       background:#fff;
       border:1px solid var(--border);
       border-radius:24px;
-      overflow:hidden;
       box-shadow:var(--shadow);
+      overflow:hidden;
     }
-    .impact-card img{
-      width:100%;
-      height:100%;
-      min-height:260px;
-      object-fit:cover;
+
+    .impact-content{
+      padding:28px;
     }
-    .impact-content{padding:24px;}
+
     .impact-content h2{
-      margin:0 0 10px;
-      color:var(--navy);
-      font-size:1.5rem;
+      margin:0 0 18px;
+      color:#000;
+      font-size:2rem;
       line-height:1.2;
+      font-weight:800;
+      border-bottom:3px solid var(--yellow);
+      display:inline-block;
+      padding-bottom:6px;
     }
-    .impact-content p{
+
+    .impact-content ul{
       margin:0;
+      padding-left:22px;
+    }
+
+    .impact-content li{
+      margin-bottom:18px;
       color:var(--muted);
+      font-size:1rem;
+    }
+
+    .impact-content li strong{
+      color:#000;
     }
 
     .footer{
-      background:#fafbfc;border-top:1px solid var(--border);padding:30px 0;text-align:center;color:var(--muted);
+      background:#fafbfc;
+      border-top:1px solid var(--border);
+      padding:30px 0;
+      text-align:center;
+      color:var(--muted);
     }
 
     @media (max-width: 900px){
-      .impact-card{grid-template-columns:1fr;}
-      .nav{flex-direction:column;align-items:flex-start;}
+      .nav{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .hero-grid{
+        grid-template-columns:repeat(2, 1fr);
+        grid-template-rows:repeat(2, 220px);
+      }
+
+      .impact-content h2{
+        font-size:1.7rem;
+      }
+    }
+
+    @media (max-width: 560px){
+      .hero{
+        padding:70px 0 50px;
+      }
+
+      .hero-grid{
+        grid-template-columns:1fr;
+        grid-template-rows:repeat(4, 150px);
+      }
+
+      .impact-content{
+        padding:22px;
+      }
     }
   </style>
 </head>
@@ -97,6 +223,7 @@
         <img src="https://static.wixstatic.com/media/16a513_43a0317988f9499b9a195066021f4cd2~mv2.png/v1/fill/w_180%2Ch_180%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/Copy%20of%20Pink%20Retro%20Giveaway%20Instagram%20Post.png" alt="MaterialBank logo">
         <span>MaterialBank</span>
       </a>
+
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="impact.html">Our Impact</a>
@@ -108,87 +235,143 @@
   </header>
 
   <section class="hero">
-    <div class="container">
-      <h1>Organizations We've Donated To</h1>
+    <div class="hero-grid">
+      <div style="background-image:url('images/impact-jamaica.png');"></div>
+      <div style="background-image:url('images/impact-ymca.png');"></div>
+      <div style="background-image:url('images/impact-eastview.png');"></div>
+      <div style="background-image:url('images/impact-car.png');"></div>
+    </div>
+
+    <div class="container hero-content">
+      <h1>Our Impact</h1>
       <p>
-        A look at the communities and organizations MaterialBank has supported through
-        school and art supply donations.
+        MaterialBank is proud to support communities through school and art supply donations
+        that help students, families, and youth access the tools they need to thrive.
       </p>
     </div>
   </section>
 
   <main class="container impact-list">
+
     <article class="impact-card">
-      <img src="https://static.wixstatic.com/media/16a513_b616bf3ef0e241b48f93372d5357b943~mv2.jpeg" alt="Pathways to Education Program">
       <div class="impact-content">
-        <h2>Pathways to Education Program</h2>
-        <p>On July 7th, 2024, we donated hundreds of school supplies to the Pathways to Education Program at their Regent Park Community Health Centre site. This donation aims to support 560 high school students in downtown east core areas who are part of their Youth Enrichment Academy.</p>
+        <h2>Toronto</h2>
+        <ul>
+          <li>
+            <strong>On March 16, 2026,</strong> we made a donation to the SMILE Canada Foundation.
+            This remarkable organization has supported more than 1,300 families, children, and youth
+            living with disabilities and long term health conditions across Canada. As part of our
+            contribution, we donated 13 backpacks filled with school supplies to help support their
+            families and youth.
+          </li>
+
+          <li>
+            <strong>On October 25, 2024,</strong> we visited Horizons for Youth where we donated
+            school and art supplies and over 50 backpacks to help support their student residents.
+            Horizons for Youth provides at-risk and homeless youth ages 16 to 24 in Toronto with
+            holistic support, life changing programs, and a home to help them leave the streets behind.
+          </li>
+
+          <li>
+            <strong>On July 8, 2024,</strong> we donated hundreds of school and art supplies to
+            YMCA's Black Achievers Program. Their program provides opportunities for Black high school
+            aged youth in the Greater Toronto Area, allowing students to develop socially and academically
+            through the support of Black mentors and role models.
+          </li>
+
+          <li>
+            <strong>On January 24, 2024,</strong> we visited YWCA Toronto’s Girls Centre, where we
+            donated a wide range of school supplies such as binders and textbooks. YWCA Toronto Girls
+            Centre provides mental health, educational, and leadership programs to help students thrive
+            academically. Their programs range from university assistance to building community leaders
+            through unique opportunities to engage, fundraise, and advocate for global issues.
+          </li>
+
+          <li>
+            <strong>On November 29, 2023,</strong> we went to CAMH, the Centre for Addiction and
+            Mental Health, and donated art supplies ranging from marker kits to oil pastels. These
+            supplies supported CAMH’s Gifts of Light program, which is fully donation funded. Their
+            mission is to identify patient wellness gaps and create change by working with patients
+            and families, providing access to basic necessities and activities that support transition
+            back into the community.
+          </li>
+
+          <li>
+            <strong>On October 25, 2023,</strong> we donated to Princess Margaret Cancer Centre’s
+            childcare program, the Magic Castle. The donation included school and art supplies ranging
+            from washable paint to packs of crayons, which are used during arts and crafts activities
+            for children in the program.
+          </li>
+
+          <li>
+            <strong>On August 9, 2023,</strong> we visited Native Child and Family Services of Toronto
+            and donated supplies ranging from pens to backpacks for their back to school initiative.
+            The organization supports children and families through programs focused on quality of life,
+            wellbeing, caring, healing, and education.
+          </li>
+
+          <li>
+            <strong>On August 9, 2023,</strong> we had the pleasure of donating to Kids of Incarcerated
+            Parents (KIP Canada). We donated over 1,000 school supplies ranging from erasers to binders
+            to help students access the supplies they need for back to school. This organization provides
+            support and guidance for children whose families are affected by the justice system.
+          </li>
+
+          <li>
+            <strong>On August 8, 2023,</strong> we visited Eastview Neighbourhood Community Centre
+            where we donated a wide range of goods, from erasers to binders. These donations were used
+            in their after school program and back to school initiative. The centre provides programs
+            for students of all ages.
+          </li>
+
+          <li>
+            <strong>On May 31, 2023,</strong> we completed our second donation. In total, we donated
+            7 bags with over 2,000 items including paint, paper, workbooks, pens, and more. Toronto
+            Foundation for Student Success recognizes that many young people in Toronto do not have
+            access to after school programs, so their Beyond 3:30 program creates a safe and welcoming
+            space for children ages 8 to 14 to learn, play, eat, and grow.
+          </li>
+
+          <li>
+            <strong>On May 26, 2023,</strong> we completed our first donation of art supplies, including
+            pencils, pens, and stickers, to Friends of Ruby. These supplies were used in their art
+            programs as a welcoming space for 2SLGBTQIA+ youth in Toronto. Friends of Ruby is a drop in
+            centre for youth across the GTA, providing support programs and essentials.
+          </li>
+        </ul>
       </div>
     </article>
 
     <article class="impact-card">
-      <img src="https://static.wixstatic.com/media/IMG_5395_edited.jpg" alt="Horizons for Youth">
       <div class="impact-content">
-        <h2>Horizons for Youth</h2>
-        <p>On October 25th, 2024, we visited Horizons for Youth and donated school and art supplies along with over 50 backpacks to support student residents. Horizons for Youth provides holistic support and housing for at-risk and homeless youth ages 16–24 in Toronto.</p>
+        <h2>Boston</h2>
+        <ul>
+          <li>
+            <strong>On November 9, 2023,</strong> we went to Boston to donate to Christopher’s Haven
+            and the Boston House of Hope and Healing. We donated school and art supplies ranging from
+            crayons to sketchbooks to support children and families.
+          </li>
+        </ul>
       </div>
     </article>
 
     <article class="impact-card">
-      <img src="https://static.wixstatic.com/media/Image20240215125107.png" alt="YWCA Toronto Girls Centre">
       <div class="impact-content">
-        <h2>YWCA Toronto Girls Centre</h2>
-        <p>On January 24th, 2024, we donated a wide range of school supplies such as binders and textbooks. YWCA Toronto Girls Centre provides mental health, educational, and leadership programs to help students thrive academically.</p>
+        <h2>Jamaica</h2>
+        <ul>
+          <li>
+            <strong>In April 2024,</strong> our donations made it to Chapelton Primary School in
+            Clarendon, Jamaica. We partnered with Roots to Routes Academy to donate an assortment of
+            school and art supplies.
+          </li>
+          <li>
+            <strong>Reflection:</strong> “Some students, without a doubt, didn’t have the luxuries
+            of money. The backpacks, I felt, allowed the students to feel special and to feel confident.”
+          </li>
+        </ul>
       </div>
     </article>
 
-    <article class="impact-card">
-      <img src="https://static.wixstatic.com/media/Image20231112223415.png" alt="Kids of Incarcerated Parents">
-      <div class="impact-content">
-        <h2>Kids of Incarcerated Parents (KIP Canada)</h2>
-        <p>On August 9th, 2023, we donated 2,105 school and art supplies ranging from erasers to binders. KIP Canada supports children whose families are affected by the justice system.</p>
-      </div>
-    </article>
-
-    <article class="impact-card">
-      <img src="https://static.wixstatic.com/media/94DEE8AE-31E9-4172-B608-660AD93453A6.jpeg" alt="Native Child and Family Services of Toronto">
-      <div class="impact-content">
-        <h2>The Native Child and Family Services of Toronto</h2>
-        <p>On August 9th, 2023, we donated 1,872 school and art supplies, from pens to backpacks, for their back-to-school initiative. The organization provides youth and educational programs and supports children and families in the community.</p>
-      </div>
-    </article>
-
-    <article class="impact-card">
-      <img src="https://static.wixstatic.com/media/IMG_0606_edited.jpg" alt="Toronto Foundation for Student Success">
-      <div class="impact-content">
-        <h2>Toronto Foundation for Student Success</h2>
-        <p>On May 31, we donated 7 bags with over 2,000 items, totaling 2,852 materials. These donations supported the Beyond 3:30 after-school program for children ages 8–14.</p>
-      </div>
-    </article>
-
-    <article class="impact-card">
-      <img src="https://static.wixstatic.com/media/46E25DF8-732C-40CC-B8D2-4C7E36120846_edi" alt="Friends of Ruby">
-      <div class="impact-content">
-        <h2>Friends of Ruby</h2>
-        <p>On May 26, we donated 1,649 school and art supplies that support art programs as a welcoming space for 2SLGBTQIA+ youth in Toronto.</p>
-      </div>
-    </article>
-
-    <article class="impact-card">
-      <img src="https://static.wixstatic.com/media/image.png" alt="Christopher's Haven and Boston House">
-      <div class="impact-content">
-        <h2>Christopher's Haven and Boston House</h2>
-        <p>MaterialBank and Our Sunrise travelled to Boston and donated school and art supplies including crayons and sketchbooks to support children with cancer and their families.</p>
-      </div>
-    </article>
-
-    <article class="impact-card">
-      <img src="https://static.wixstatic.com/media/IMG_3659.jpeg" alt="CAMH">
-      <div class="impact-content">
-        <h2>The Centre for Addiction and Mental Health (CAMH)</h2>
-        <p>On November 29th, 2023, we donated art supplies ranging from marker kits to oil pastels for CAMH’s Gifts of Light program, which helps support patient wellness and transition back into the community.</p>
-      </div>
-    </article>
   </main>
 
   <footer class="footer">
